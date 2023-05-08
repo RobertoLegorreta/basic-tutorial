@@ -6,9 +6,14 @@ import BooksTable from "./components/BooksTable";
 const Container = styled.div`
   width: 100%;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
 `;
 
-const MainSection = styled.div``;
+const MainSection = styled.div`
+  display: flex;
+  flex-grow: 1;
+`;
 
 function App() {
   return (
