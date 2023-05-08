@@ -10,7 +10,7 @@ const Container = styled.div`
 `;
 
 const Form = styled.div`
-  box-shadow: 10px 10px 94px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 35px 0px rgba(0, 0, 0, 0.15);
   width: 80%;
   height: fit-content;
   border-radius: 15px;
