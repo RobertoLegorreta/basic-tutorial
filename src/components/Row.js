@@ -13,12 +13,12 @@ const Container = styled.div`
     border-right: 1px solid gray;
   }
   #id {
-    flex-grow: 1;
+    width: 10%;
   }
   #title,
   #author,
   #edition {
-    flex-grow: 2;
+    width: 30%;
   }
 `;
 

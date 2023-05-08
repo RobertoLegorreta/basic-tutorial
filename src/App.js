@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Navbar from "./components/Navbar";
 import BooksForm from "./components/BooksForm";
 import BooksTable from "./components/BooksTable";
+import { useState } from "react";
 
 const Container = styled.div`
   width: 100%;
@@ -16,12 +17,23 @@ const MainSection = styled.div`
 `;
 
 function App() {
+  const [newBook, setNewBook] = useState({
+    title: "",
+    author: "",
+    edition: "",
+  });
+  const [books, setBooks] = useState([]);
+
   return (
     <Container>
       <Navbar></Navbar>
       <MainSection>
-        <BooksForm></BooksForm>
-        <BooksTable></BooksTable>
+        <BooksForm
+          setForm={setNewBook}
+          values={newBook}
+          saveBook={() => setBooks([...books, newBook])}
+        ></BooksForm>
+        <BooksTable books={books}></BooksTable>
       </MainSection>
     </Container>
   );

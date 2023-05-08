@@ -38,15 +38,36 @@ const Form = styled.div`
   }
 `;
 
-export default function BooksForm() {
+export default function BooksForm({ setForm, values, saveBook }) {
   return (
     <Container>
       <Form>
         <p>Registra</p>
-        <input type="text" placeholder="Título"></input>
-        <input type="text" placeholder="Autor"></input>
-        <input type="text" placeholder="Edición"></input>
-        <button>Enviar</button>
+        <input
+          type="text"
+          placeholder="Título"
+          value={values.title}
+          onChange={(e) => {
+            setForm({ ...values, title: e.target.value });
+          }}
+        ></input>
+        <input
+          type="text"
+          placeholder="Autor"
+          value={values.author}
+          onChange={(e) => {
+            setForm({ ...values, author: e.target.value });
+          }}
+        ></input>
+        <input
+          type="text"
+          placeholder="Edición"
+          value={values.edition}
+          onChange={(e) => {
+            setForm({ ...values, edition: e.target.value });
+          }}
+        ></input>
+        <button onClick={saveBook}>Enviar</button>
       </Form>
     </Container>
   );

@@ -27,7 +27,17 @@ const Table = styled.div`
   }
 `;
 
-export default function BooksTable() {
+export default function BooksTable({ books }) {
+  const data = books.map((e, index) => (
+    <Row
+      key={index}
+      id={index}
+      title={e.title}
+      author={e.author}
+      edition={e.edition}
+    />
+  ));
+
   return (
     <Container>
       <Table>
@@ -39,6 +49,7 @@ export default function BooksTable() {
           author="Autor"
           edition="Edición"
         />
+        {data}
       </Table>
     </Container>
   );
